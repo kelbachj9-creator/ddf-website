@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Different Direction Foods | Premium Food Amenity Consultants | Northeast Ohio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --coral: #ff5c3a;
+      --coral-dark: #e04a2a;
+      --yellow: #ffe03a;
+      --purple: #6c3fff;
+      --ink: #0f0f0f;
+      --navy: #1a1a2e;
+      --white: #ffffff;
+      --off: #fafaf8;
+      --light: #f2f2ef;
+      --mid: #e0e0da;
+      --muted: #888;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--ink); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1.5px solid var(--mid);
+      padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; height: 66px;
+    }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; line-height: 1; }
+    .nav-logo span { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.56rem; font-weight: 700; color: var(--coral); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 2px; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 600; font-size: 0.88rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-cta { background: var(--coral) !important; color: white !important; padding: 0.5rem 1.3rem !important; border-radius: 6px; font-weight: 800 !important; }
+    .nav-cta:hover { background: var(--coral-dark) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh; position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      background: url('machine-store.png') center/cover no-repeat;
+    }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,20,0.92) 55%, rgba(10,10,20,0.5)); }
+    .hero-inner { position: relative; z-index: 1; padding: 120px 4rem 5rem; max-width: 680px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,92,58,0.15); border: 1px solid rgba(255,92,58,0.35);
+      color: var(--coral); padding: 0.35rem 0.9rem; border-radius: 4px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 7vw, 6rem); letter-spacing: 0.02em; line-height: 0.92; color: white; margin-bottom: 1.2rem; }
+    .hero h1 em { font-style: normal; color: var(--yellow); }
+    .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 500px; margin-bottom: 2rem; }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-hero { background: var(--coral); color: white; padding: 0.9rem 2.2rem; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: all 0.2s; box-shadow: 0 4px 24px rgba(255,92,58,0.35); }
+    .btn-hero:hover { background: var(--coral-dark); transform: translateY(-2px); }
+    .btn-hero-ghost { background: transparent; color: white; padding: 0.9rem 2.2rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1rem; border: 1.5px solid rgba(255,255,255,0.3); transition: all 0.2s; }
+    .btn-hero-ghost:hover { border-color: white; }
+
+    /* STATS BAR */
+    .stats-bar { background: var(--coral); padding: 1.1rem 4rem; display: flex; align-items: center; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .stat-item { color: white; display: flex; align-items: center; gap: 0.7rem; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.04em; line-height: 1; }
+    .stat-label { font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.3; }
+    .stat-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.25); }
+
+    /* SECTION BASICS */
+    section { padding: 5rem 4rem; }
+    .section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--coral); margin-bottom: 0.6rem; }
+    h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.6rem, 4vw, 3.8rem); letter-spacing: 0.02em; color: var(--ink); line-height: 0.95; margin-bottom: 1rem; }
+    h2 em { font-style: normal; color: var(--coral); }
+    .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.75; max-width: 600px; }
+    .centered { text-align: center; }
+    .centered .section-sub { margin: 0.75rem auto 0; }
+
+    /* INTRO */
+    .intro { background: var(--white); }
+    .intro-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .intro-visual { background: var(--navy); border-radius: 20px; padding: 3rem; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 380px; position: relative; overflow: hidden; }
+    .intro-visual::before { content: ''; position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,92,58,0.08); border-radius: 50%; }
+    .big-zero-display { font-family: 'Bebas Neue', sans-serif; font-size: 8rem; color: var(--yellow); line-height: 0.85; letter-spacing: -0.02em; }
+    .intro-visual h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.04em; color: white; margin-bottom: 0.5rem; text-align: center; }
+    .intro-visual p { font-size: 0.88rem; color: rgba(255,255,255,0.55); text-align: center; line-height: 1.65; margin-bottom: 1.5rem; font-style: italic; }
+    .zero-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+    .zero-chip { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.8); padding: 0.35rem 0.85rem; border-radius: 50px; font-size: 0.78rem; font-weight: 700; }
+    .intro-text .section-sub { max-width: 480px; margin-bottom: 2rem; }
+    .btn-coral { background: var(--coral); color: white; padding: 0.85rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 0.95rem; transition: all 0.2s; display: inline-block; }
+    .btn-coral:hover { background: var(--coral-dark); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--ink); padding: 0.85rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.95rem; border: 2px solid var(--mid); transition: all 0.2s; display: inline-block; }
+    .btn-outline:hover { border-color: var(--coral); color: var(--coral); }
+
+    /* HOW IT WORKS */
+    .how { background: var(--light); }
+    .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 1100px; margin: 3rem auto 0; }
+    .how-card { background: white; border-radius: 16px; padding: 1.8rem 1.4rem; border: 1.5px solid var(--mid); transition: all 0.2s; }
+    .how-card:hover { border-color: var(--coral); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,92,58,0.08); }
+    .how-num { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: white; margin-bottom: 1rem; }
+    .how-card:nth-child(1) .how-num { background: var(--coral); }
+    .how-card:nth-child(2) .how-num { background: var(--purple); }
+    .how-card:nth-child(3) .how-num { background: var(--navy); }
+    .how-card:nth-child(4) .how-num { background: var(--yellow); color: var(--ink); }
+    .how-card h4 { font-weight: 800; font-size: 1rem; color: var(--ink); margin-bottom: 0.5rem; }
+    .how-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+    /* SMART MARKETS */
+    .markets { background: var(--white); }
+    .markets-header { text-align: center; margin-bottom: 1rem; }
+    .markets-header .section-sub { margin: 0.75rem auto 0; max-width: 620px; }
+
+    /* Comparison table */
+    .compare-table { max-width: 800px; margin: 2.5rem auto 3.5rem; border-radius: 14px; overflow: hidden; border: 1.5px solid var(--mid); }
+    .compare-table table { width: 100%; border-collapse: collapse; }
+    .compare-table th { background: var(--navy); color: white; padding: 0.75rem 1rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; text-align: left; }
+    .compare-table th:first-child { text-align: left; }
+    .compare-table td { padding: 0.7rem 1rem; font-size: 0.88rem; border-bottom: 1px solid var(--mid); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: var(--off); }
+    .compare-table .highlight td { background: rgba(108,63,255,0.06); font-weight: 700; }
+    .star-badge { background: var(--coral); color: white; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 800; margin-left: 0.4rem; }
+
+    .market-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+
+    .market-card { border-radius: 18px; overflow: hidden; border: 1.5px solid var(--mid); transition: all 0.25s; display: flex; flex-direction: column; }
+    .market-card:hover { transform: translateY(-4px); box-shadow: 0 12px 50px rgba(0,0,0,0.1); }
+    .market-card.featured { border-color: var(--purple); }
+    .market-card.dark { border-color: var(--navy); }
+    .market-card.store-card { border-color: var(--coral); }
+
+    .market-card-header { padding: 1.5rem 2rem; }
+    .market-card-header.white-bg { background: var(--light); }
+    .market-card-header.purple-bg { background: var(--purple); }
+    .market-card-header.navy-bg { background: var(--navy); }
+    .market-card-header.coral-bg { background: var(--coral); }
+
+    .market-tier { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .white-bg .market-tier { color: var(--coral); }
+    .purple-bg .market-tier, .navy-bg .market-tier, .coral-bg .market-tier { color: rgba(255,255,255,0.6); }
+
+    .market-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.04em; line-height: 1; }
+    .white-bg h3 { color: var(--ink); }
+    .purple-bg h3, .navy-bg h3, .coral-bg h3 { color: white; }
+
+    .popular-badge { display: inline-block; background: var(--yellow); color: var(--ink); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 800; margin-top: 0.4rem; }
+
+    .market-card-body { padding: 1.5rem 2rem; flex-grow: 1; }
+
+    .market-specs { display: grid; grid-template-columns: auto 1fr; gap: 0.3rem 0.8rem; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1.5px solid var(--mid); }
+    .spec-label { font-size: 0.78rem; font-weight: 800; color: var(--coral); }
+    .spec-val { font-size: 0.88rem; color: var(--ink); font-weight: 500; }
+
+    .market-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
+
+    .market-features { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+    .market-features li { font-size: 0.86rem; font-weight: 600; display: flex; align-items: flex-start; gap: 0.55rem; color: #444; }
+    .market-features li::before { content: '→'; color: var(--coral); font-weight: 900; flex-shrink: 0; }
+
+    /* TRADITIONAL VENDING */
+    .vending-strip {
+      max-width: 1100px; margin: 2rem auto 0;
+      background: var(--yellow); border-radius: 16px;
+      padding: 2rem 2.5rem; display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center; gap: 2rem;
+    }
+    .vending-icon-big { font-size: 3rem; }
+    .vending-strip h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.04em; color: var(--ink); margin-bottom: 0.3rem; }
+    .vending-strip p { font-size: 0.88rem; color: rgba(0,0,0,0.6); line-height: 1.6; }
+    .vending-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .vtag { background: rgba(0,0,0,0.08); border-radius: 4px; padding: 0.3rem 0.75rem; font-size: 0.78rem; font-weight: 700; color: rgba(0,0,0,0.65); }
+
+    /* AI STEPS */
+    .how-ai { background: var(--light); }
+    .steps-img { max-width: 900px; margin: 2.5rem auto 0; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 50px rgba(0,0,0,0.1); }
+    .steps-img img { width: 100%; display: block; }
+
+    /* WHO WE SERVE */
+    .who { background: var(--white); }
+    .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 960px; margin: 3rem auto 0; }
+    .who-card { background: var(--light); border-radius: 14px; padding: 1.5rem; text-align: center; transition: all 0.2s; border: 1.5px solid transparent; }
+    .who-card:hover { border-color: var(--coral); background: white; box-shadow: 0 4px 20px rgba(255,92,58,0.08); transform: translateY(-3px); }
+    .who-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .who-card h5 { font-weight: 800; font-size: 0.95rem; color: var(--ink); margin-bottom: 0.3rem; }
+    .who-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    /* FAQ */
+    .faq { background: var(--navy); }
+    .faq .section-label { color: var(--yellow); }
+    .faq h2 { color: white; }
+    .faq h2 em { color: var(--yellow); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; max-width: 1000px; margin: 3rem auto 0; }
+    .faq-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 1.8rem; transition: all 0.2s; }
+    .faq-card:hover { background: rgba(255,255,255,0.1); border-color: var(--coral); }
+    .faq-q { font-size: 0.82rem; font-weight: 800; color: var(--coral); margin-bottom: 0.75rem; font-style: italic; }
+    .faq-card p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.7; }
+    .faq-card strong { color: white; }
+
+    /* HANDLE EVERYTHING */
+    .handle { background: var(--purple); }
+    .handle .section-label { color: var(--yellow); }
+    .handle h2 { color: white; }
+    .handle h2 em { color: var(--yellow); }
+    .handle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 3rem auto 0; }
+    .handle-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.2s; }
+    .handle-card:hover { background: rgba(255,255,255,0.18); }
+    .handle-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .handle-card h4 { font-weight: 800; font-size: 1rem; color: white; margin-bottom: 0.5rem; }
+    .handle-card p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+    /* CONTACT */
+    .contact-section { background: var(--off); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; max-width: 1100px; margin: 0 auto; }
+    .contact-left h2 { margin-bottom: 0.75rem; }
+    .contact-left > p { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 1.5rem; }
+    .contact-info { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .contact-info a { display: flex; align-items: center; gap: 0.7rem; font-weight: 700; font-size: 1rem; color: var(--ink); text-decoration: none; transition: color 0.2s; }
+    .contact-info a:hover { color: var(--coral); }
+    .contact-info a span:first-child { font-size: 1.3rem; }
+    .owners-badge { background: var(--yellow); border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
+    .owners-badge strong { display: block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.45); margin-bottom: 0.2rem; }
+    .owners-badge span { font-weight: 800; font-size: 1rem; color: var(--ink); }
+    .guarantee-badge { background: rgba(108,63,255,0.08); border: 1.5px solid rgba(108,63,255,0.2); border-radius: 10px; padding: 1rem 1.2rem; }
+    .guarantee-badge strong { display: block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple); margin-bottom: 0.3rem; }
+    .guarantee-badge p { font-size: 0.84rem; color: #555; line-height: 1.6; }
+    .contact-form { background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 0.85rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%; padding: 0.88rem 1.1rem; border-radius: 8px;
+      border: 1.5px solid var(--mid); background: var(--off);
+      color: var(--ink); font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem; font-weight: 500; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: #ccc; }
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus { border-color: var(--coral); box-shadow: 0 0 0 3px rgba(255,92,58,0.08); }
+    .contact-form select option { background: white; }
+    .contact-form textarea { resize: vertical; min-height: 110px; }
+    .btn-submit {
+      background: var(--coral); color: white; border: none;
+      padding: 1rem 1.5rem; border-radius: 8px;
+      font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 800;
+      cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .btn-submit:hover { background: var(--coral-dark); transform: translateY(-2px); }
+    .form-disclaimer { font-size: 0.78rem; color: var(--muted); text-align: center; line-height: 1.5; }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: #444; padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; font-size: 0.82rem; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.08em; color: #666; }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    footer a { color: #444; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--yellow); }
+
+    /* ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 960px) {
+      .intro-inner, .contact-inner, .faq-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr 1fr; }
+      .market-cards { grid-template-columns: 1fr; }
+      .who-grid, .handle-grid { grid-template-columns: 1fr 1fr; }
+      .vending-strip { grid-template-columns: 1fr; text-align: center; }
+      .vending-tags { justify-content: center; }
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 2rem; }
+      .stats-bar { padding: 1rem 2rem; gap: 2rem; }
+      .hero-inner { padding: 120px 2rem 4rem; }
+      footer { padding: 2rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">
+      Different Direction Foods
+      <span>Premium Food Amenity Consultants · Northeast Ohio</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#markets">Our Amenities</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Consultation</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div style="position:relative;z-index:1;width:100%;padding:120px 4rem 5rem;display:flex;flex-direction:column;align-items:center;text-align:center;">
+      <div class="hero-badge">📍 Northeast Ohio — Premium Food Amenity Consultants</div>
+      <h1 style="max-width:800px;">The Premium<br>Food Amenity<br><em>Your Space Deserves.</em></h1>
+      <p class="hero-sub" style="max-width:600px;margin-left:auto;margin-right:auto;">Different Direction Foods places AI-powered smart market amenities in luxury apartments, corporate campuses, and premium facilities across Northeast Ohio — at absolutely zero cost to you.</p>
+      <div class="hero-buttons" style="justify-content:center;margin-bottom:3rem;">
+        <a href="#contact" class="btn-hero">Request a Free Consultation →</a>
+        <a href="#markets" class="btn-hero-ghost">See Our Amenities</a>
+      </div>
+      <img src="steps.png" alt="How it works: Swipe, Grab, Auto Checkout" style="width:100%;max-width:820px;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.4);">
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Always<br>Available</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">99%</div>
+      <div class="stat-label">AI Item<br>Accuracy</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">$0</div>
+      <div class="stat-label">Cost To<br>You. Ever.</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">1x</div>
+      <div class="stat-label">Tap. Grab<br>Everything.</div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro-inner fade-up">
+      <div class="intro-visual">
+        <div class="big-zero-display">$0</div>
+        <h3>Cost to Your Property</h3>
+        <p>No equipment fees. No installation. No monthly charges. No hidden anything.</p>
+        <div class="zero-chips">
+          <div class="zero-chip">✓ No equipment cost</div>
+          <div class="zero-chip">✓ No installation fee</div>
+          <div class="zero-chip">✓ No monthly charges</div>
+          <div class="zero-chip">✓ No service fees</div>
+          <div class="zero-chip">✓ We handle everything</div>
+        </div>
+      </div>
+      <div class="intro-text">
+        <div class="section-label">Premium Food Amenity Consulting</div>
+        <h2>We don't sell<br>vending machines.<br><em>We elevate spaces.</em></h2>
+        <p class="section-sub">Different Direction Foods is a premium food amenity consultancy. We identify high-quality locations across Northeast Ohio and install AI-powered Smart Market amenities that residents and employees actually talk about. One tap unlocks the door. Grab as much as you want. Walk away. We handle everything after that.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+          <a href="#contact" class="btn-coral">Request a Free Consultation</a>
+          <a href="#markets" class="btn-outline">See Our Smart Markets</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="centered fade-up">
+      <div class="section-label">The Experience</div>
+      <h2>One Tap. Grab Everything.<br><em>Walk Away.</em></h2>
+      <p class="section-sub">No buttons. No checkout screen. No fumbling with a card reader every single time. This is what a premium food amenity actually feels like.</p>
+    </div>
+    <div class="how-grid fade-up">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <h4>Tap or Swipe</h4>
+        <p>Tap or swipe your card — the door unlocks instantly. No PIN, no app required. One time.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <h4>Grab What You Want</h4>
+        <p>AI-powered cameras detect every item taken — 99% accurate, every time. Grab one or ten.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <h4>Walk Away</h4>
+        <p>Close the door. Your card is charged automatically. No checkout screen. Done in 60 seconds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMART MARKETS -->
+  <section class="markets" id="markets">
+    <div class="markets-header fade-up">
+      <div class="section-label">Our Smart Market Collection</div>
+      <h2>Modern Market Amenities.<br><em>Every Space Covered.</em></h2>
+      <p class="section-sub">Four Smart Market tiers — from boutique amenity rooms to enterprise-level facilities. We match the right solution to your space, headcount, and goals.</p>
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <div class="compare-table fade-up">
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Footprint (W×H×D)</th>
+            <th>Items</th>
+            <th>Users</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Smart Market Vertical</td>
+            <td>2.5 × 6.5 × 2.5 ft</td>
+            <td>200+</td>
+            <td>Up to 100</td>
+          </tr>
+          <tr class="highlight">
+            <td><strong>Smart Market Basic</strong> <span class="star-badge">⭐ #1</span></td>
+            <td><strong>5 × 5 × 2 ft</strong></td>
+            <td><strong>250+</strong></td>
+            <td><strong>Up to 300</strong></td>
+          </tr>
+          <tr>
+            <td>Smart Market Plus</td>
+            <td>5 × 7 × 3 ft</td>
+            <td>350+</td>
+            <td>Up to 500</td>
+          </tr>
+          <tr>
+            <td>Smart Market Store</td>
+            <td>Custom</td>
+            <td>500+</td>
+            <td>500+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MARKET CARDS -->
+    <div class="market-cards fade-up">
+
+      <!-- VERTICAL -->
+      <div class="market-card">
+        <div class="market-card-header white-bg" style="padding:0;overflow:hidden;background:var(--light);">
+          <img src="machine-vertical.png" alt="Smart Market Vertical" style="width:100%;height:260px;object-fit:contain;background:#f2f2ef;display:block;padding:1rem;">
+        </div>
+        <div class="market-card-body">
+          <div class="market-tier" style="color:var(--coral);margin-bottom:0.3rem;">Smart Market</div>
+          <h3 style="color:var(--ink);font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.04em;margin-bottom:1rem;">Vertical</h3>
+          <div class="market-specs">
+            <span class="spec-label">Footprint</span><span class="spec-val">2.5W × 6.5H × 2.5D ft</span>
+            <span class="spec-label">Inventory</span><span class="spec-val">200+ drinks & snacks</span>
+            <span class="spec-label">Capacity</span><span class="spec-val">Up to 100 users</span>
+            <span class="spec-label">Technology</span><span class="spec-val">AI tap-to-enter vending</span>
+          </div>
+          <p class="market-desc">Sleek, compact, and perfect for tighter spaces. The Vertical fits boutique amenity rooms, lobbies, and hallways without dominating the space. Big AI, small footprint.</p>
+          <ul class="market-features">
+            <li>Tap once, grab what you want, walk away</li>
+            <li>Perfect for smaller buildings & amenity rooms</li>
+            <li>All major cards + mobile wallets</li>
+            <li>Remote inventory management via app</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BASIC — FEATURED -->
+      <div class="market-card featured">
+        <div class="market-card-header purple-bg" style="padding:0;overflow:hidden;position:relative;">
+          <img src="market-basic-new.png" alt="Smart Market Basic" style="width:100%;height:260px;object-fit:contain;background:#0f0f0f;display:block;padding:1rem;">
+          <div style="position:absolute;top:1rem;left:1rem;background:var(--purple);color:white;padding:0.3rem 0.8rem;border-radius:4px;font-size:0.7rem;font-weight:800;letter-spacing:0.1em;">SMART MARKET</div>
+        </div>
+        <div class="market-card-body">
+          <div class="market-tier" style="color:var(--purple);margin-bottom:0.3rem;">Smart Market</div>
+          <h3 style="color:var(--ink);font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.04em;margin-bottom:0.3rem;">Basic</h3>
+          <div class="popular-badge">⭐ Our #1 Solution — Highest Satisfaction Ratings</div>
+          <div class="market-specs">
+            <span class="spec-label">Footprint</span><span class="spec-val">5W × 5H × 2D ft</span>
+            <span class="spec-label">Inventory</span><span class="spec-val">250+ items at any time</span>
+            <span class="spec-label">Capacity</span><span class="spec-val">Up to 300 tenants/employees</span>
+            <span class="spec-label">Technology</span><span class="spec-val">Premium AI smart vending</span>
+          </div>
+          <p class="market-desc">The signature amenity. Designed for premium apartment communities and mid-size corporate campuses where residents expect more than a coffee maker in the lobby. This is the one people talk about.</p>
+          <ul class="market-features">
+            <li>250+ items — real selection, not just chips</li>
+            <li>Serves up to 300 tenants or employees</li>
+            <li>Full app management: inventory, pricing, auto-restock</li>
+            <li>Camera monitoring + remote diagnostics</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PLUS -->
+      <div class="market-card dark">
+        <div class="market-card-header navy-bg" style="padding:0;overflow:hidden;">
+          <img src="machine-plus.png" alt="Smart Market Plus" style="width:100%;height:260px;object-fit:contain;background:#0f0f0f;display:block;padding:1rem;">
+        </div>
+        <div class="market-card-body">
+          <div class="market-tier" style="color:var(--coral);margin-bottom:0.3rem;">Smart Market</div>
+          <h3 style="color:var(--ink);font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.04em;margin-bottom:1rem;">Plus</h3>
+          <div class="market-specs">
+            <span class="spec-label">Footprint</span><span class="spec-val">5W × 7H × 3D ft</span>
+            <span class="spec-label">Inventory</span><span class="spec-val">Up to 350+ items at one time</span>
+            <span class="spec-label">Capacity</span><span class="spec-val">Supports up to 500 users</span>
+            <span class="spec-label">Ideal For</span><span class="spec-val">Expanded product selections</span>
+          </div>
+          <p class="market-desc">For properties that want more. The Plus brings increased capacity, a taller profile, and a wider product range — perfect for larger communities that want the full market experience.</p>
+          <ul class="market-features">
+            <li>350+ items — expanded selection for every preference</li>
+            <li>Supports up to 500 tenants or employees</li>
+            <li>Ideal for properties looking to upgrade from Basic</li>
+            <li>AI tracks everything taken or returned</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- STORE -->
+      <div class="market-card store-card">
+        <div class="market-card-header coral-bg" style="padding:0;overflow:hidden;">
+          <img src="market-store-new.png" alt="Smart Market Store" style="width:100%;height:260px;object-fit:contain;background:#f2f2ef;display:block;padding:0.5rem;">
+        </div>
+        <div class="market-card-body">
+          <div class="market-tier" style="color:var(--coral);margin-bottom:0.3rem;">Smart Market</div>
+          <h3 style="color:var(--ink);font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.04em;margin-bottom:1rem;">Store</h3>
+          <div class="market-specs">
+            <span class="spec-label">Footprint</span><span class="spec-val">Custom — built for your space</span>
+            <span class="spec-label">Inventory</span><span class="spec-val">Up to 500+ items at one time</span>
+            <span class="spec-label">Capacity</span><span class="spec-val">Enterprise-level — 500+ users</span>
+            <span class="spec-label">Ideal For</span><span class="spec-val">Full market/store experience</span>
+          </div>
+          <p class="market-desc">The flagship. Custom-sized, enterprise-level, full market experience built to fit your exact space and serve your entire community. Built for large-scale, high-demand environments where a machine just won't cut it.</p>
+          <ul class="market-features">
+            <li>Custom sizing — designed around your layout</li>
+            <li>500+ items — a real store, not a vending machine</li>
+            <li>Enterprise-level capacity for 500+ users</li>
+            <li>Full cloud dashboard: live inventory, auto-restock</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TRADITIONAL VENDING -->
+    <div class="vending-strip fade-up">
+      <div class="vending-icon-big">🥤</div>
+      <div>
+        <h3>Traditional Vending Machines</h3>
+        <p>For locations that prefer a cash option or need a supplemental unit alongside a Smart Market. Modern, reliable, restocked and maintained entirely by us — zero cost to you.</p>
+        <div class="vending-tags">
+          <div class="vtag">💵 Cash accepted</div>
+          <div class="vtag">💳 Card & mobile pay</div>
+          <div class="vtag">⚡ 24/7 operation</div>
+          <div class="vtag">🔧 Fully maintained by us</div>
+          <div class="vtag">$0 cost to you</div>
+        </div>
+      </div>
+      <a href="#contact" class="btn-coral">Get a Quote →</a>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="who" id="who">
+    <div class="centered fade-up">
+      <div class="section-label">Who We Serve</div>
+      <h2>Premium Spaces.<br><em>Elevated Amenities.</em></h2>
+      <p class="section-sub" style="margin:0.75rem auto 0;">We work with property managers, building owners, and business leaders who understand that great amenities aren't a nice-to-have — they're a competitive advantage. Ideal locations have 125+ residents or employees on-site daily.</p>
+    </div>
+    <div class="who-grid fade-up">
+      <div class="who-card">
+        <div class="who-icon">🏙️</div>
+        <h5>Luxury Apartment Communities</h5>
+        <p>Elevate your amenity package and give residents a reason to stay — and rave about it</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🏢</div>
+        <h5>Corporate Campuses & Offices</h5>
+        <p>A premium food amenity that helps attract and retain talent without a cafeteria budget</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🏭</div>
+        <h5>Manufacturing & Industrial</h5>
+        <p>Multi-shift operations where workers need real food access — fast and frictionless</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🏋️</div>
+        <h5>Premium Gyms & Fitness</h5>
+        <p>Health-forward product selection that fits your brand and your members' lifestyle</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">📦</div>
+        <h5>Warehouses & Distribution</h5>
+        <p>High-volume locations where employees genuinely have nowhere else to go</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🏨</div>
+        <h5>Hotels & Hospitality</h5>
+        <p>Staff amenity or guest-facing — we design the experience around your property</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="#contact" class="btn-coral">See If Your Space Qualifies →</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="centered fade-up">
+      <div class="section-label">Got Questions?</div>
+      <h2>We've Got<br><em>Answers.</em></h2>
+    </div>
+    <div class="faq-grid fade-up">
+      <div class="faq-card">
+        <div class="faq-q">"What's the installation cost?"</div>
+        <p><strong>Zero.</strong> For a limited number of clients each year, we install the entire solution at NO COST. We pay 100% of the installation. No catch, no hidden fees, no monthly charges — ever.</p>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">"How do you know what products to put in?"</div>
+        <p>We use industry-leading software to identify the most in-demand products — no guesswork. We also run surveys so <strong>residents and employees always have their favorites stocked</strong>.</p>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">"How often do you restock?"</div>
+        <p>Real-time Point of Sale software keeps our local staff informed of inventory levels so inventory is <strong>replenished regularly and on-time — every time</strong>. You'll never deal with an empty machine.</p>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">"Is there a long-term contract?"</div>
+        <p>Just a simple <strong>12-month agreement</strong> plus a hassle-free <strong>90-day satisfaction guarantee</strong>. Not satisfied after 90 days? We remove it. No risk, no penalty. We want you and your users to be happy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WE HANDLE EVERYTHING -->
+  <section class="handle">
+    <div class="centered fade-up">
+      <div class="section-label">White Glove Service</div>
+      <h2>We Handle<br><em>Everything.</em></h2>
+    </div>
+    <div class="handle-grid fade-up">
+      <div class="handle-card">
+        <div class="handle-icon">🔧</div>
+        <h4>Full Installation</h4>
+        <p>We handle delivery, setup, and initial stocking. Your only job is to tell us where the amenity room is.</p>
+      </div>
+      <div class="handle-card">
+        <div class="handle-icon">📦</div>
+        <h4>Ongoing Maintenance & Restocking</h4>
+        <p>We monitor inventory remotely and restock proactively — before residents or employees ever notice it's low.</p>
+      </div>
+      <div class="handle-card">
+        <div class="handle-icon">🥗</div>
+        <h4>Curated Product Selection</h4>
+        <p>We tailor the product mix to your space — premium beverages, fresh food, healthy options. Not just Doritos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left fade-up">
+        <div class="section-label">Let's Connect</div>
+        <h2>Request a<br><em>Free Consultation.</em></h2>
+        <p>Tell us about your property or facility and we'll be in touch within one business day. We'll assess your space, recommend the right Smart Market tier, and handle everything from there.</p>
+        <div class="owners-badge">
+          <strong>Owners & Operators</strong>
+          <span>Adam & Janine Kelbach</span>
+        </div>
+        <div class="contact-info">
+          <a href="tel:4407494851"><span>📞</span> (440) 749-4851</a>
+          <a href="mailto:kelbachj9@gmail.com"><span>✉️</span> kelbachj9@gmail.com</a>
+          <a href="#"><span>📍</span> Northeast Ohio</a>
+        </div>
+        <div class="guarantee-badge">
+          <strong>90-Day Satisfaction Guarantee</strong>
+          <p>Not satisfied within the first 90 days? We remove it — no penalty, no risk. We want you and your users to be happy.</p>
+        </div>
+      </div>
+      <div class="fade-up">
+        <form class="contact-form" name="contact" netlify netlify-honeypot="bot-field" action="/thank-you" method="POST">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none;"><input name="bot-field"></p>
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your Name *" required>
+            <input type="text" name="company" placeholder="Property / Company Name *" required>
+          </div>
+          <div class="form-row">
+            <input type="text" name="firstname" placeholder="First Name *" required>
+            <input type="text" name="lastname" placeholder="Last Name *" required>
+          </div>
+          <div class="form-row">
+            <input type="email" name="email" placeholder="Email Address *" required>
+            <input type="tel" name="phone" placeholder="Phone Number *" required>
+          </div>
+          <input type="text" name="city" placeholder="City">
+          <select name="property_type">
+            <option value="" disabled selected>What best describes your space?</option>
+            <option>Luxury Apartment Community</option>
+            <option>Corporate Office / Campus</option>
+            <option>Manufacturing or Industrial Facility</option>
+            <option>Gym or Fitness Center</option>
+            <option>Warehouse or Distribution Center</option>
+            <option>Hotel or Hospitality</option>
+            <option>Other — let's talk</option>
+          </select>
+          <select name="size">
+            <option value="" disabled selected>Number of Residents / Employees</option>
+            <option>125–200</option>
+            <option>200–350</option>
+            <option>350–500</option>
+            <option>500+</option>
+          </select>
+          <select name="interest">
+            <option value="" disabled selected>Which Smart Market are you interested in?</option>
+            <option>Smart Market Vertical (up to 100 users)</option>
+            <option>Smart Market Basic ⭐ (up to 300 users)</option>
+            <option>Smart Market Plus (up to 500 users)</option>
+            <option>Smart Market Store (500+ users)</option>
+            <option>Not sure — help me figure it out</option>
+          </select>
+          <textarea name="message" placeholder="Tell us about your property — what's there now, what's missing, and what your residents or employees need."></textarea>
+          <button type="submit" class="btn-submit">
+            <span>Request My Free Consultation</span>
+            <span>→</span>
+          </button>
+          <p class="form-disclaimer">We work with a limited number of clients each year. Reach out early to secure your spot.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">Different Direction Foods</div>
+      <div style="margin-top:0.3rem;font-size:0.78rem;color:#555;">Adam & Janine Kelbach · Northeast Ohio</div>
+    </div>
+    <div>Premium Food Amenity Consultants serving Northeast Ohio</div>
+    <div style="display:flex;flex-direction:column;gap:0.3rem;align-items:flex-end;">
+      <a href="tel:4407494851">(440) 749-4851</a>
+      <a href="mailto:kelbachj9@gmail.com">kelbachj9@gmail.com</a>
+    </div>
+    <div class="footer-links">
+      <a href="#markets">Smart Markets</a>
+      <a href="#how">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#who">Who We Serve</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.btn-submit');
+      btn.innerHTML = '<span>Sending...</span>';
+      btn.disabled = true;
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(() => {
+        btn.innerHTML = '<span>✓ Got it — we\'ll be in touch within one business day!</span>';
+        btn.style.background = '#c04020';
+      })
+      .catch(() => {
+        btn.innerHTML = '<span>Something went wrong — please call or email us directly.</span>';
+        btn.disabled = false;
+      });
+    }
+  </script>
+
+</body>
+</html>
